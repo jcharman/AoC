@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+# Define points values for each move and outcome.
 points = {
     'rock': 1,
     'paper': 2,
@@ -9,6 +10,7 @@ points = {
     'win': 6 
 }
 
+# Map letters to moves.
 shapes = {
     'A': 'rock',
     'B': 'paper',
@@ -18,6 +20,7 @@ shapes = {
     'Z': 'scissors'
 }
 
+# Calculate whether we won or lost for a given pair of moves.
 def outcome(myMove, yourMove):
     wins = {
         'rock': 'scissors',
@@ -31,8 +34,8 @@ def outcome(myMove, yourMove):
     else:
         return 'lose'
 
+# For each set of moves in the input, work out our total score.
 totalScore = 0
-
 with open('input.txt', 'r') as inputFile:
     for line in inputFile:
         moves = line.strip().split(' ')
@@ -41,4 +44,5 @@ with open('input.txt', 'r') as inputFile:
         totalScore += points[ourMove]
         totalScore += points[outcome(ourMove, theirMove)]
 
+# Print the answer.
 print(totalScore)
