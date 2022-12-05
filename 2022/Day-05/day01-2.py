@@ -31,7 +31,7 @@ with open('input.txt', 'r') as inputFile:
         rawStacks.append([])
 
     for line in inputFile:
-        if(line[0] != '['):
+        if('[' not in line[0]):
             break
         for i in range(len(stackIndex)):
             if(stackIndex[i].isdigit() and line[i] != ' '):
