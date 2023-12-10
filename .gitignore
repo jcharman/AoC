@@ -3,3 +3,4 @@ obj
 *.csproj
 test.txt
 .vscode
+input.txt
